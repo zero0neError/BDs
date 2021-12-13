@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 29-11-2021 a las 22:31:23
+-- Tiempo de generación: 13-12-2021 a las 17:20:41
 -- Versión del servidor: 5.7.31
 -- Versión de PHP: 7.3.21
 
@@ -151,19 +151,20 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `fechaNacimiento` date NOT NULL,
   `rol` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `foto` varchar(70) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `activo` tinyint(1) NOT NULL,
+  `hash` varchar(32) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `email`, `nombre`, `apellidos`, `password`, `fechaNacimiento`, `rol`, `foto`, `activo`) VALUES
-(1, 'wwbhty@gmail.com', 'Guillermo', 'Rueda Padilla', 'megustanlasvacas', '2001-12-15', 'Usuario', NULL, 1),
-(2, 'kico@gmail.com', 'Kico', 'de la Tuuur', 'qwerty1_', '2001-06-19', 'Usuario', NULL, 1),
-(3, 'jesusrp@live.com', 'Jesus', 'Perez Rodriguez', '1234', '1991-11-16', 'Usuario', NULL, 1);
+INSERT INTO `usuario` (`id`, `email`, `nombre`, `apellidos`, `password`, `fechaNacimiento`, `rol`, `foto`, `hash`) VALUES
+(2, 'kico@gmail.com', 'Kico', 'de la Tuuur', 'qwerty1_', '2001-06-19', 'Usuario', NULL, NULL),
+(3, 'jesusrp@live.com', 'Jesus', 'Perez Rodriguez', '1234', '1991-11-16', 'Usuario', NULL, NULL),
+(7, 'aogarod001@g.educaand.es', 'Antonio', 'Cum', NULL, '2021-12-15', 'Usuario', NULL, '4cfddd091dbc35782c0b081a81c95cef'),
+(9, 'wwbhty@gmail.com', 'Guillermo', 'Rueda Padilla', '1234', '2001-12-15', 'Usuario', NULL, NULL);
 
 --
 -- Restricciones para tablas volcadas
